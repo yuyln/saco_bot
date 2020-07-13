@@ -13,7 +13,8 @@ access_token = os.environ['ACCESS_TOKEN_SACO']
 access_secret = os.environ['ACCESS_SECRET_SACO']
 twitter_key = os.environ['TWITTER_KEY_SACO']
 twitter_secret = os.environ['TWITTER_SECRET_SACO']
-adjetivos = ['pinto', 'ruim', 'gordo', 'doente']
+with open("adjetivos_tratado.txt", "r", encoding="UTF-8") as arq:
+    adjetivos = arq.read().split("/")
 adjetivos_backup = adjetivos.copy()
 #api = Bot(consumer_key=twitter_key,
                       #consumer_secret=twitter_secret,
