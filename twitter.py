@@ -16,10 +16,10 @@ twitter_secret = os.environ['TWITTER_SECRET_SACO']
 with open("adjetivos_tratado.txt", "r", encoding="UTF-8") as arq:
     adjetivos = arq.read().split("/")
 adjetivos_backup = adjetivos.copy()
-#api = Bot(consumer_key=twitter_key,
-                      #consumer_secret=twitter_secret,
-                      #access_token_key=access_token,
-                      #access_token_secret=access_secret)
+api = Bot(consumer_key=twitter_key,
+                      consumer_secret=twitter_secret,
+                      access_token_key=access_token,
+                      access_token_secret=access_secret)
 while True:
     if len(adjetivos) != 0:
         adj = choice(adjetivos)
@@ -31,11 +31,11 @@ while True:
     try:
         if len(adjetivos) != 0:
             print(f"Meu saco {adj}\nFalta(m) {len(adjetivos)} adjetivo(s)")
-            #api.PostUpdate(f"Meu saco {adj}\nFaltam {len(adjetivos)} adjetivos")
+            api.PostUpdate(f"Meu saco {adj}")
         else:
             print(f"Meu saco {adj}\nA lista de adjetivos sera resetada")
-            #api.PostUpdate(f"Meu saco {adj}\nA lista de adjetivos sera resetada")
+            api.PostUpdate(f"Meu saco {adj}")
     except Exception as e:
         print(e)
-    sleep(5)
+    sleep(3600)
     
